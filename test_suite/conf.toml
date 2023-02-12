@@ -1,0 +1,43 @@
+suite_name = "test_suite"
+
+[[plugins]]
+plugin_name = "test"
+dependencies = []
+module_name = "test_module"
+rel_path = "src/test_module.py"
+
+[[plugins]]
+plugin_name = "TestDependOne"
+dependencies = ["TestOne", "test"]
+module_name = "test_d_one"
+rel_path = "src/test_d_one.py"
+
+[[plugins]]
+plugin_name = "TestDependTwo"
+dependencies = ["TestTwo", "TestOne", "test"]
+module_name = "test_d_two"
+rel_path = "src/test_d_two.py"
+
+[[plugins]]
+plugin_name = "TestDependThree"
+dependencies = ["TestTwo", "TestDependTwo", "test"]
+module_name = "test_dd_three"
+rel_path = "src/test_dd_three.py"
+
+[[plugins]]
+plugin_name = "TestOne"
+dependencies = ["test"]
+module_name = "test_one"
+rel_path = "src/test_one.py"
+
+[[plugins]]
+plugin_name = "TestTwo"
+dependencies = ["test"]
+module_name = "test_two"
+rel_path = "src/test_two.py"
+
+[[plugins]]
+plugin_name = "TestThree"
+dependencies = ["test"]
+module_name = "test_three"
+rel_path = "src/test_three.py"
